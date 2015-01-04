@@ -19,7 +19,6 @@ coverage:
 send-coverage:
 	./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha \
 	--report lcovonly -- $(MOCHAOPTS) $(SPECS) && \
-	CODECLIMATE_REPO_TOKEN=3e07936aba63bcce9e527ce5aa37687ed4ff28e5493f2fb4214fefc4dcdc22f5 \
 	./node_modules/.bin/codeclimate < ./coverage/lcov.info && rm -rf ./coverage
 
 doc:
