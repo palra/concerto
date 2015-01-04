@@ -1,0 +1,4 @@
+/**
+ * @namespace Component
+ * @memberOf Concerto
+ */
