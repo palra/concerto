@@ -1,5 +1,5 @@
 var http = require('http'),
-    ClientRequest = http.ClientRequest,
+    IncomingMessage = http.IncomingMessage,
     Request = require('../Request')
 ;
 
@@ -11,9 +11,9 @@ describe('Concerto', function() {
 
       describe('Request', function() {
         
-        it('should extends http.ClientRequest', function() {
+        it('should extends http.IncomingMessage', function() {
           var req = new Request();
-          req.should.be.instanceOf(ClientRequest);
+          req.should.be.instanceOf(IncomingMessage);
         });
 
       });

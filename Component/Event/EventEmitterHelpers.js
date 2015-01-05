@@ -98,7 +98,7 @@ module.exports = {
       }
       
       if(_.isFunction(emitter)) {
-          emitters.push(emitter);
+        emitters.push(emitter);
       } else {
           throw new TypeError('Expected a constructor or an emitter name, got `'+Emitter+'`');
       }

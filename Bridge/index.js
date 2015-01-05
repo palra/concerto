@@ -1,4 +1,0 @@
-/**
- * @namespace Bridge
- * @memberOf Concerto
- */
