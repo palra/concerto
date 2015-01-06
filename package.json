@@ -16,7 +16,8 @@
     "extend": "~2.0.0",
     "modelo": "~4.1.2",
     "express": "~4.10.7",
-    "merge-descriptors": "0.0.2"
+    "merge-descriptors": "0.0.2",
+    "methods": "~1.1.1"
   },
   "devDependencies": {
     "should": "~4.4.2",

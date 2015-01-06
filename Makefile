@@ -1,4 +1,4 @@
-SRC = ./index.js ./Component/*
+SRC = ./index.js ./Component/* ./Bridge/*
 SPECS = ./**/Test/**/*.spec.js
 MOCHAOPTS = --require should --reporter spec --ui bdd
 MOCHAEXEC = ./node_modules/.bin/_mocha
