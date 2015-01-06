@@ -19,7 +19,7 @@ coverage:
 send-coverage:
 	./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha \
 	--report lcovonly -- $(MOCHAOPTS) $(SPECS) &&  ./coverage/lcov.info | \
-	./node_modules/.bin/coveralls.js && rm -rf ./coverage
+	./node_modules/.bin/coveralls && rm -rf ./coverage
 
 doc:
 	$(DOCEXEC) $(DOCOPTS) $(SRC)
