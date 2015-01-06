@@ -25,7 +25,6 @@
     "istanbul": "~0.3.5",
     "jsdoc": "~3.3.0-alpha13",
     "coveralls": "~2.11.2",
-    "codeclimate-test-reporter": "0.0.4",
     "supertest": "~0.15.0"
   }
 }
