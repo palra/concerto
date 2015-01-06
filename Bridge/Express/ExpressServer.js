@@ -1,7 +1,10 @@
 var express = require('express'),
-    mixin = require('merge-descriptors'),
-    EventEmitter = require('events').EventEmitter,
-    util = require('util')
+    Server = require('http').Server,
+    _ = require('lodash'),
+    util = require('util'),
+
+    ExpressRequest = require('./ExpressRequest'),
+    ExpressResponse = require('./ExpressResponse')
 ;
 
 /**
@@ -9,24 +12,25 @@ var express = require('express'),
  */
 var ExpressServer = module.exports = function() {
   this.init();
-  this.request = { __proto__: this.request, app: app};
-  this.response = { __proto__: this.response, app: app}
+  this.request = { __proto__: ExpressServer.prototype.request, app: this};
+  this.response = { __proto__: ExpressServer.prototype.response, app: this};
 }
 
-util.inherits(ExpressServer, EventEmitter);
-
-mixin(ExpressServer.prototype, require('express/lib/application'));
+util.inherits(ExpressServer, Server);
+_.assign(ExpressServer.prototype, require('express/lib/application'));
 
 ExpressServer.prototype.listen = function() {
   this._server = express.application.listen.apply(
     this.handle.bind(this),
     arguments
   );
+
+  return this._server;
 }
 
 ExpressServer.prototype.close = function() {
   this._server.close.apply(this._server, arguments);
 }
 
-ExpressServer.prototype.request = express.request;
-ExpressServer.prototype.response = express.response;
+ExpressServer.prototype.request = ExpressRequest;
+ExpressServer.prototype.response = ExpressResponse;

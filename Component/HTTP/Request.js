@@ -3,7 +3,6 @@ var http = require('http'),
 
     util = require('util'),
     url = require('url'),
-    mixin = require('merge-descriptors'),
     _ = require('lodash')
 ;
 
